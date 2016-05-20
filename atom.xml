@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Keep it simple, stupid]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://gingerli.github.io/"/>
-  <updated>2015-11-17T09:30:26.000Z</updated>
+  <updated>2016-05-20T06:53:55.000Z</updated>
   <id>http://gingerli.github.io/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Code snippets, save time]]></title>
+    <link href="http://gingerli.github.io/2016/05/19/Code-snippets-save-time/"/>
+    <id>http://gingerli.github.io/2016/05/19/Code-snippets-save-time/</id>
+    <published>2016-05-19T08:58:19.000Z</published>
+    <updated>2016-05-20T06:53:55.000Z</updated>
+    <content type="html"><![CDATA[<p>WWDC上Apple的工程师经常在demo的时候拖自己的code snippet，为什么不用completion shortcut，是提醒懒人们多用这功能吗？</p>
+<a id="more"></a>
+<h3 id="例子：初始化view_controller">例子：初始化view controller</h3><p>习惯新建view controller 同时选择生成同名xib的童鞋，也会经常用以下init选择初始化时候的nib文件。这样写的好处是不管view controller在不在被使用的bundle里，都能随便用。</p>
+<pre><code>- (instancetype)init
+{
+    <span class="keyword">self</span> = [<span class="keyword">super</span> <span class="symbol">initWithNibName:</span>[[<span class="keyword">self</span> <span class="class"><span class="keyword">class</span>] <span class="title">description</span>] <span class="title">bundle</span>:[<span class="title">NSBundle</span> <span class="title">bundleForClass</span>:[<span class="title">self</span> <span class="title">class</span>]]];</span>
+    <span class="keyword">if</span> (<span class="keyword">self</span>) {
+        ;
+    }
+    <span class="keyword">return</span> <span class="keyword">self</span>;
+}
+</code></pre><p>把这段代码拖到code snippet里，再编辑个completion shortcut，如下图：</p>
+<p><img src="/img/Code_snippets_save_time/1.png" alt="Example"></p>
+<p>以后只要敲initvc，这段代码就可以自动补全了。</p>
+<h3 id="同步">同步</h3><p>为了方便在不同机器之间同步和随时更新code snippet(假装很勤劳的样子)<br>在<code>~/Library/Developer/Xcode/UserData/CodeSnippets</code> init一个repo， 放在github上吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>WWDC上Apple的工程师经常在demo的时候拖自己的code snippet，为什么不用completion shortcut，是提醒懒人们多用这功能吗？</p>]]>
+    
+    </summary>
+    
+      <category term="Xcode" scheme="http://gingerli.github.io/tags/Xcode/"/>
+    
+      <category term="Development" scheme="http://gingerli.github.io/categories/Development/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Communications between sandbox apps in Mac]]></title>
